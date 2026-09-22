@@ -469,27 +469,46 @@ The current version focuses on providing information and guidance rather than tr
 
 # 23. Screenshots
 
-Screenshots of the actual agent configuration, knowledge base, testing and example conversations will be added here.
+The screenshots below show the actual Bumblebee agent configuration, knowledge base, technical setup, testing and workflow.
 
-### Agent Configuration
+### 1. Agent Overview
 
-_Add screenshot here._
+Shows the Bumblebee agent configuration, system instructions, first message, voice, language and LLM.
 
-### Knowledge Base
+![Bumblebee Agent Overview](./screenshots/01-bumblebee-agent-overview.png)
 
-_Add screenshot here._
+### 2. Knowledge Base
 
-### Example Conversation
+Shows the official BFSI information sources connected to the agent.
 
-_Add screenshot here._
+![Bumblebee Knowledge Base](./screenshots/02-bumblebee-knowledge-base.png)
 
-### Testing
+### 3. Voice and LLM Configuration
 
-_Add screenshot here._
+Shows the voice, language and LLM configuration used by Bumblebee.
 
+![Bumblebee Voice and LLM Configuration](./screenshots/03-bumblebee-voice-llm-config.png)
+
+### 4. Example Conversation
+
+Shows Bumblebee answering a real BFSI-related question using its knowledge base.
+
+![Bumblebee Conversation Test](./screenshots/04-bumblebee-conversation-test.png)
+
+### 5. Guardrail Test
+
+Shows Bumblebee handling a request for account-specific information that it cannot access.
+
+![Bumblebee Guardrail Test](./screenshots/05-bumblebee-guardrail-test.png)
+
+### 6. Agent Workflow
+
+Shows the workflow and conversation paths configured for the Bumblebee agent.
+
+![Bumblebee Agent Workflow](./screenshots/06-bumblebee-agent-workflow.png)
 ---
 
-# 25. Disclaimer
+# 24. Disclaimer
 
 This is an independent proof-of-concept project created for learning, experimentation and portfolio demonstration.
 
