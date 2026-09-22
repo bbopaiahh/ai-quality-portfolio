@@ -30,21 +30,21 @@ The agent looks for relevant information from its connected knowledge base and e
 
 # 2. Why I Built This
 
-My background is in Quality Engineering, with experience in banking and financial-services projects.
+My background is in Quality Engineering, with experience in banking and financial services projects.
 
 While learning about Generative AI and AI Agents, I wanted to build something related to a domain I already understand.
 
-I chose BFSI because customer-support teams deal with a large number of questions every day, and many of those questions are repetitive.
+I chose BFSI because customer support teams deal with a large number of questions every day and many of those questions are repetitive.
 
 The POC was created to explore a simple question:
 
-**Can an AI voice agent provide useful BFSI information while still staying within clearly defined boundaries?**
+**Can an AI voice agent provide useful BFSI information while still staying within clearly defined boundaries ?**
 
 The second part was just as important to me.
 
-A financial-services assistant should not simply answer everything the customer asks.
+A financial services assistant should not simply answer everything the customer asks.
 
-It needs to know when it should answer, when it should say that information is unavailable, and when it should direct the customer to a human or an official channel.
+It needs to know when it should answer, when it should say that information is unavailable and when it should direct the customer to a human or an official channel.
 
 ---
 
@@ -57,9 +57,9 @@ The agent is designed to:
 - Search the connected knowledge base for relevant information
 - Explain the information in simple language
 - Have a natural voice conversation
-- Handle banking-related questions
-- Handle insurance-related questions
-- Handle financial-services related questions
+- Handle banking related questions
+- Handle insurance related questions
+- Handle financial services related questions
 - Guide customers toward the appropriate next step
 - Clearly explain when something is outside its scope
 
@@ -126,7 +126,7 @@ Now consider a different situation.
 
 **Bumblebee:**
 
-> "I can't access individual policy or account information. Please use the appropriate official channel or speak with a customer-service representative for account-specific assistance."
+> "I can't access individual policy or account information. Please use the appropriate official channel or speak with a customer service representative for account specific assistance."
 
 This is an important part of the design.
 
@@ -148,7 +148,7 @@ If the required information is not available, the agent should not invent an ans
 
 # 7. Agent Personality
 
-I configured Bumblebee to behave like a professional and approachable financial-services assistant.
+I configured Bumblebee to behave like a professional and approachable financial services assistant.
 
 Because this is a voice interaction, I wanted the responses to be reasonably short and easy to understand.
 
@@ -175,7 +175,7 @@ The idea is to make the conversation feel natural instead of making the customer
 
 # 8. Voice Configuration
 
-Bumblebee is configured as a voice-based agent.
+Bumblebee is configured as a voice based agent.
 
 **Voice:** Eric — Smooth, Trustworthy
 
@@ -183,15 +183,13 @@ Bumblebee is configured as a voice-based agent.
 
 I selected a voice that fits the type of conversation the agent is expected to have.
 
-Since this is a customer-support use case, I wanted the interaction to sound clear, calm and professional.
+Since this is a customer support use case, I wanted the interaction to sound clear, calm and professional.
 
 ---
 
 # 9. LLM Configuration
 
-The current Bumblebee configuration uses:
-
-**Qwen3.5-397B-A17B**
+The current Bumblebee configuration uses:  **Qwen3.5-397B-A17B**
 
 The LLM is responsible for understanding the customer's request and generating a response while following the instructions and guardrails defined for the agent.
 
@@ -211,7 +209,7 @@ I added rules to make sure Bumblebee stays within its intended scope.
 
 - Provide personalized financial advice
 - Process financial transactions
-- Handle account-specific requests
+- Handle account specific requests
 - Handle sensitive personal or account information
 - Invent information that is not available in the knowledge base
 - Make false promises
@@ -229,15 +227,13 @@ For example:
 
 Bumblebee should not try to answer this.
 
-It should explain that it cannot access account-specific information and direct the customer to the appropriate official channel.
+It should explain that it cannot access account specific information and direct the customer to the appropriate official channel.
 
 ---
 
 # 11. Handling Unknown Information
 
-One of the important rules I added is:
-
-**Do not make up information.**
+One of the important rules I added is:  **Do not make up information.**
 
 If the required information cannot be found in the knowledge base, the agent should say that it does not have enough information rather than creating an answer.
 
@@ -249,11 +245,11 @@ The agent should be transparent when it does not have enough information.
 
 # 12. Handling Out-of-Scope Questions
 
-Bumblebee is designed specifically for banking, insurance and financial-services related information.
+Bumblebee is designed specifically for banking, insurance and financial services related information.
 
-If a customer asks something completely unrelated, the agent should politely explain that its purpose is to assist with BFSI-related information.
+If a customer asks something completely unrelated, the agent should politely explain that its purpose is to assist with BFSI related information.
 
-This helps keep the agent focused instead of allowing it to behave like a general-purpose chatbot.
+This helps keep the agent focused instead of allowing it to behave like a general purpose chatbot.
 
 ---
 
@@ -304,7 +300,7 @@ I wanted to understand:
 - Did it use the available information?
 - Did it avoid making up information?
 - Did it follow the guardrails?
-- Did it correctly handle account-specific requests?
+- Did it correctly handle account specific requests?
 - Did it avoid giving personalized financial advice?
 - Did it behave correctly when information was unavailable?
 - Did the voice interaction remain understandable?
@@ -359,7 +355,7 @@ With an AI Agent, the same question can sometimes be answered using different wo
 
 Because of this, AI testing needs to consider the quality, relevance, safety and correctness of the response instead of only comparing exact text.
 
-This was an interesting shift from traditional automation testing to AI-system validation.
+This was an interesting shift from traditional automation testing to AI system validation.
 
 ---
 
@@ -373,7 +369,7 @@ Some current limitations are:
 - It does not access customer accounts.
 - It does not process transactions.
 - It does not provide personalized financial advice.
-- Account-specific workflows would require secure authentication and appropriate enterprise integrations.
+- Account specific workflows would require secure authentication and appropriate enterprise integrations.
 - Production use would require additional security, monitoring, compliance and governance controls.
 - The quality of answers depends on the quality and coverage of the connected knowledge base.
 
@@ -385,7 +381,7 @@ If this POC were taken further, I would look at adding the following.
 
 ### Secure Authentication
 
-Customers would need to be securely authenticated before accessing any account-specific functionality.
+Customers would need to be securely authenticated before accessing any account specific functionality.
 
 ### Human Handoff
 
@@ -397,7 +393,7 @@ Support for commonly used Indian languages could make the assistant more useful 
 
 ### CRM Integration
 
-The agent could be connected to an enterprise CRM or customer-support platform where appropriate.
+The agent could be connected to an enterprise CRM or customer support platform where appropriate.
 
 ### Conversation Monitoring
 
@@ -429,11 +425,11 @@ For this POC, I was responsible for designing and configuring the solution.
 
 My work included:
 
-- Defining the BFSI customer-support use case
+- Defining the BFSI customer support use case
 - Designing the Bumblebee persona
 - Creating the agent instructions
 - Defining the expected behaviour
-- Configuring the knowledge-grounded approach
+- Configuring the knowledge grounded approach
 - Defining the guardrails
 - Defining out-of-scope scenarios
 - Configuring the voice interaction
@@ -461,9 +457,9 @@ My work included:
 
 **Status: Working Proof of Concept**
 
-The agent has been configured and tested as a voice-based BFSI assistant.
+The agent has been configured and tested as a voice based BFSI assistant.
 
-The current version focuses on providing information and guidance rather than transactions or account-specific services.
+The current version focuses on providing information and guidance rather than transactions or account specific services.
 
 ---
 
@@ -491,13 +487,13 @@ Shows the voice, language and LLM configuration used by Bumblebee.
 
 ### 4. Example Conversation
 
-Shows Bumblebee answering a real BFSI-related question using its knowledge base.
+Shows Bumblebee answering a real BFSI related question using its knowledge base.
 
 ![Bumblebee Conversation Test](./screenshots/04-bumblebee-conversation-test.png)
 
 ### 5. Guardrail Test
 
-Shows Bumblebee handling a request for account-specific information that it cannot access.
+Shows Bumblebee handling a request for account specific information that it cannot access.
 
 ![Bumblebee Guardrail Test](./screenshots/05-bumblebee-guardrail-test.png)
 
@@ -512,6 +508,6 @@ Shows the workflow and conversation paths configured for the Bumblebee agent.
 
 This is an independent proof-of-concept project created for learning, experimentation and portfolio demonstration.
 
-It is not an official application or deployment of the Government of India, Ministry of Finance, Department of Financial Services, or any other government organisation.
+It is not an official application or deployment of the Government of India, Ministry of Finance, Department of Financial Services or any other government organisation.
 
-The BFSI use case and publicly available information were used as the basis for exploring how an AI Agent could be designed for this type of customer-support scenario.
+The BFSI use case and publicly available information were used as the basis for exploring how an AI Agent could be designed for this type of customer support scenario.
