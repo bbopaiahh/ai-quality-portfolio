@@ -612,56 +612,49 @@ The project is intended as a learning and portfolio project demonstrating practi
 
 # 27. Screenshots
 
-The screenshots below show the actual NovaFin configuration, workflow and testing evidence.
+The screenshots below show the actual NovaFin agent configuration, invoice data, integrations and testing results.
 
-### Agent Configuration
+### 1. Agent Overview
 
-Shows the NovaFin Agent configuration and instructions.
+Shows the NovaFin agent, daily schedule, instructions, connected tools and published version.
 
-`01-novafin-agent-overview.png`
+![NovaFin Agent Overview](./screenshots/01-novafin-agent-overview.png)
 
-### Google Sheets Configuration
+### 2. Google Sheets Configuration
 
-Shows the invoice data source used by the agent.
+Shows the Google Sheets tool used to retrieve invoice records from the `invoice_data` worksheet.
 
-`02-novafin-google-sheets.png`
+![NovaFin Google Sheets Configuration](./screenshots/02-novafin-google-sheets.png)
 
-### Gmail Configuration
+### 3. Invoice Data Sheet
 
-Shows how NovaFin is configured to send the payment reminder email.
+Shows the sample invoice structure used by NovaFin, including invoice number, product, amount, due date, status and reminder status.
 
-`03-novafin-gmail.png`
+![NovaFin Invoice Data Sheet](./screenshots/03-novafin-invoice-data-sheet.png)
 
-### Agent Workflow
+### 4. Gmail Configuration
 
-Shows the overall workflow and the tools connected to NovaFin.
+Shows the Gmail tool used to generate and send payment reminder emails.
 
-`04-novafin-agent-workflow.png`
+![NovaFin Gmail Configuration](./screenshots/03-novafin-gmail-configuration.png)
 
-### Successful Reminder Test
+### 5. Google Sheets Update Configuration
 
-Shows a test where NovaFin identified an eligible overdue invoice and sent the reminder.
+Shows the Google Sheets update tool used to record the `Reminder Sent` value and identify the correct spreadsheet row.
 
-`05-novafin-successful-test.png`
+![NovaFin Google Sheets Update](./screenshots/04-novafin-google-sheets-update.png)
 
-### Spreadsheet Update
+### 6. Successful Reminder Test
 
-Shows the `Reminder Sent` field being updated after the successful email.
+Shows an actual successful NovaFin test where an eligible overdue invoice was identified, the reminder email was sent successfully, and the spreadsheet was updated.
 
-`06-novafin-spreadsheet-update.png`
+![NovaFin Successful Reminder Test](./screenshots/05-novafin-successful-reminder-test.png)
 
-### Duplicate Prevention Test
+### 7. Duplicate Prevention Test
 
-Shows NovaFin skipping an invoice that has already been processed.
+Shows NovaFin identifying invoices that had already received reminders and skipping them instead of sending another email.
 
-`07-novafin-duplicate-prevention.png`
-
-### Email Delivery Test
-
-Shows the reminder email received by the test recipient. During testing, the email was delivered to the recipient account but was placed in the Spam folder.
-
-`08-novafin-email-delivery.png`
-
+![NovaFin Duplicate Prevention](./screenshots/06-novafin-duplicate-prevention.png)
 ---
 
 
