@@ -166,21 +166,15 @@ These are the areas where I found my Quality Engineering background especially u
 # How I Approach AI Projects
 
 I generally follow a simple approach:
-**Understand the problem**
-          ↓
-**Decide where AI actually helps**
-          ↓
-**Build a small working POC**
-          ↓
-**Connect the required tools or data**
-          ↓
-**Add rules and guardrails**
-          ↓
-**Test normal and abnormal scenarios**
-          ↓
-**Find where it fails**
-          ↓
-**Improve the workflow**
+
+1. **Understand the problem**
+2. **Decide where AI actually helps**
+3. **Build a small working POC**
+4. **Connect the required tools or data**
+5. **Add rules and guardrails**
+6. **Test normal and abnormal scenarios**
+7. **Find where it fails**
+8. **Improve the workflow**
 
 This portfolio is a record of that learning process.
 
