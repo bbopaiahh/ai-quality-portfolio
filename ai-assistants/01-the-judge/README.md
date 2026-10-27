@@ -50,15 +50,15 @@ The current prototype can:
 
 ```mermaid
 flowchart TD
-    A[Streamlit dashboard] --> B[Select tenant]
-    B --> C[FastAPI configuration service]
-    C --> D[Tenant rules and target URL]
-    D --> E[Python audit engine]
-    E --> F[Playwright browser]
-    F --> G[Live application DOM]
-    G --> H[Compare expected and actual]
+    A[Dashboard] --> B[Select tenant]
+    B --> C[Config API]
+    C --> D[Rules and target URL]
+    D --> E[Audit engine]
+    E --> F[Playwright]
+    F --> G[Live DOM]
+    G --> H[Compare states]
     H --> I[PASS / WARNING / FAIL]
-    I --> J[Dashboard details and CSV report]
+    I --> J[Results and CSV]
 ```
 
 ### Audit sequence
