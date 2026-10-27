@@ -50,17 +50,17 @@ The current application can:
 ```mermaid
 flowchart TD
     A[Documents] --> B[Extract text]
-    B --> C[Find requirements]
-    C --> D[Sync requirements]
-    B --> E[Chunk text]
-    E --> F[LLM generation]
-    F --> G[Parse test cases]
-    G --> H[Detect changes]
+    B --> C[Requirements]
+    C --> D[Sync repo]
+    B --> E[Chunking]
+    E --> F[LLM]
+    F --> G[Parse cases]
+    G --> H[Compare cases]
     H --> I[Version cases]
     D --> J[Traceability]
     I --> J
-    J --> K[Coverage and quality]
-    K --> L[Dashboard and export]
+    J --> K[Coverage]
+    K --> L[Dashboard and Excel]
 ```
 
 The main stages are shown to the user as generation progresses. If no documents are uploaded, no readable text is found, or the generation cannot be parsed into cases, the application reports the issue instead of presenting an empty result as a successful suite.
