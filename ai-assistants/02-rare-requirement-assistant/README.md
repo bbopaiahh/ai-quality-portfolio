@@ -60,7 +60,7 @@ flowchart TD
     D --> J[Traceability]
     I --> J
     J --> K[Coverage]
-    K --> L[Dashboard and Excel]
+    K --> L[Dashboard/Excel]
 ```
 
 The main stages are shown to the user as generation progresses. If no documents are uploaded, no readable text is found, or the generation cannot be parsed into cases, the application reports the issue instead of presenting an empty result as a successful suite.
