@@ -49,18 +49,18 @@ The current application can:
 
 ```mermaid
 flowchart TD
-    A[Upload PDF or DOCX] --> B[Extract document text]
-    B --> C[Rule-based requirement candidates]
-    C --> D[Compare and synchronize requirement repository]
-    B --> E[Chunk document with overlap]
-    E --> F[LLM test generation]
-    F --> G[Parse structured test cases]
-    G --> H[Assign IDs and detect repository changes]
-    H --> I[Version test case records]
-    D --> J[Requirement-to-test traceability]
+    A[Documents] --> B[Extract text]
+    B --> C[Find requirements]
+    C --> D[Sync requirements]
+    B --> E[Chunk text]
+    E --> F[LLM generation]
+    F --> G[Parse test cases]
+    G --> H[Detect changes]
+    H --> I[Version cases]
+    D --> J[Traceability]
     I --> J
-    J --> K[Coverage and suite quality analysis]
-    K --> L[Streamlit results and Excel export]
+    J --> K[Coverage and quality]
+    K --> L[Dashboard and export]
 ```
 
 The main stages are shown to the user as generation progresses. If no documents are uploaded, no readable text is found, or the generation cannot be parsed into cases, the application reports the issue instead of presenting an empty result as a successful suite.
