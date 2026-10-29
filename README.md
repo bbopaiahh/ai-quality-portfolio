@@ -210,8 +210,8 @@ They are not official products or deployments of any company, government organis
 
 # Contact
 
-GitHub: [My GitHub Profile]
+GitHub: [bbopaiahh/ai-quality-portfolio](https://github.com/bbopaiahh/ai-quality-portfolio)
 
-LinkedIn: [My LinkedIn Profile]
+LinkedIn: [LinkedIn Profile](https://linkedin.com/in/bbopaiahh-bp-644921a1/)
 
-Email: [My Email]
+Email: [bpbbopaiahh@gmail.com](mailto:bpbbopaiahh@gmail.com)
