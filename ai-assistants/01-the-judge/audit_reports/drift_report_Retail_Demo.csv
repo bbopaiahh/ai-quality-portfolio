@@ -1,0 +1,7 @@
+Tenant,Timestamp,Field_ID,Check_Type,Property,Expected,Actual,Status,Notes
+Retail_Demo,17:25:19,validationCustom01,attribute,required,True,True,PASS,Matched
+Retail_Demo,17:25:19,validationCustom05,attribute,required,True,True,WARNING,ID Collision: 2 elements share this ID.
+Retail_Demo,17:25:19,validationCustom04,visibility,,True,True,PASS,Matched
+Retail_Demo,17:25:19,validationCustom04,disabled,,False,False,PASS,Matched
+Retail_Demo,17:25:19,validationCustom04,disabled,,True,False,FAIL,"Logic Drift: Expected True, Found False"
+Retail_Demo,17:25:19,validationCustom99,visibility,,True,NOT_FOUND,FAIL,Element not found in DOM.

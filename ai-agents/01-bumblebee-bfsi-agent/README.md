@@ -502,6 +502,10 @@ Shows Bumblebee handling a request for account specific information that it cann
 Shows the workflow and conversation paths configured for the Bumblebee agent.
 
 ![Bumblebee Agent Workflow](./screenshots/06-bumblebee-agent-workflow.png)
+
+## Hosted agent
+
+Open the [Bumblebee voice agent](https://elevenlabs.io/app/talk-to?agent_id=agent_5301m1xr1yfbeadt5rq45xjtkvva). Availability may depend on ElevenLabs account and sharing settings.
 ---
 
 # 24. Disclaimer

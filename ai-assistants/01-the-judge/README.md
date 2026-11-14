@@ -264,10 +264,22 @@ The current status is a demonstrable proof of concept. The documented demo flow 
 5. Review one PASS, the duplicate-ID WARNING, a drift FAIL, and a missing-element FAIL.
 6. Download the CSV and inspect its expected/actual evidence.
 
-The three tenant reports in the project package provide example outputs. Exact results depend on the active configuration source and the current state of the public target page.
+The three reviewed tenant reports under `audit_reports/` provide example outputs. They contain synthetic tenant names and results from the public practice form. Exact results depend on the active configuration source and the current state of the public target page.
 
-## 20. Portfolio scope and disclaimer
+## 20. Source code and local setup
+
+This folder includes the Python application, mock FastAPI configuration service, audit engine, sample configuration, and reviewed example reports. To run the demo on Windows, create a virtual environment, install the dependencies, and install Playwright Chromium:
+
+```powershell
+py -3 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe -m playwright install chromium
+```
+
+Then start the app using `START_THE_JUDGE.bat`, or run the mock API and Streamlit app in separate terminals as described in `README_The_Judge.md`. The launcher starts local demo services; it does not deploy the application.
+
+## 21. Portfolio scope and disclaimer
 
 This is an independent proof-of-concept project for learning and portfolio demonstration. It is not an official application or deployment for any bank, insurer, retailer, or other organization. The demo tenant names are examples and do not represent customer environments.
 
-This README explains the project and its behavior. The public portfolio shares documentation and selected reviewed evidence; it does not publish the full working application source, local environment files, or credentials.
+The public project folder contains the working proof-of-concept source and selected synthetic evidence. It excludes `.env`, virtual environments, and local caches. The demo uses a public practice page; do not point it at a production system without permission and appropriate safeguards.

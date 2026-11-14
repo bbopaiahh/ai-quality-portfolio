@@ -1,0 +1,6 @@
+Tenant,Timestamp,Field_ID,Check_Type,Property,Expected,Actual,Status,Notes
+Insurance_Demo,19:49:02,validationCustom01,attribute,required,True,True,PASS,Matched
+Insurance_Demo,19:49:02,validationCustom05,attribute,required,True,True,WARNING,ID Collision: 2 elements share this ID.
+Insurance_Demo,19:49:02,validationCustom04,visibility,,True,True,PASS,Matched
+Insurance_Demo,19:49:02,validationCustom04,disabled,,False,False,PASS,Matched
+Insurance_Demo,19:49:02,validationCustom04,disabled,,True,False,FAIL,"Logic Drift: Expected True, Found False"

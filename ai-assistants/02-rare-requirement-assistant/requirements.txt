@@ -1,0 +1,14 @@
+streamlit
+python-dotenv
+openai
+groq
+PyPDF2
+python-docx
+Pillow
+pytesseract
+PyMuPDF
+pandas
+openpyxl
+pydantic
+pyyaml
+requests

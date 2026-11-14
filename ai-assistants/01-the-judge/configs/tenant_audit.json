@@ -1,0 +1,9 @@
+{
+  "tenant": "Practice_Bank",
+  "target_url": "https://practice.expandtesting.com/form-validation",
+  "audit_rules": [
+    { "id": "validationCustom01", "property": "required", "expected": true },
+    { "id": "validationCustom05", "property": "required", "expected": true },
+    { "id": "validationCustom02", "property": "maxlength", "expected": "20" }
+  ]
+}

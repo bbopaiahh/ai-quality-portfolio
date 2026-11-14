@@ -3,8 +3,8 @@
 **Type:** AI Test Engineering Assistant proof of concept  
 **Domain:** Requirements analysis and test design  
 **Interface:** Streamlit web application  
-**Input:** PDF and DOCX requirement documents  
-**Output:** Versioned master test suite, coverage and quality findings, Excel workbook  
+**Input:** PDF, DOCX, and image requirement documents<br>
+**Output:** Project-scoped test suite, coverage and quality findings, Excel workbook<br>
 **Status:** Demonstrable proof of concept
 
 ---
@@ -31,7 +31,8 @@ The project also gave me a way to examine where AI helps, where deterministic ru
 
 The current application can:
 
-- Accept one or more PDF or DOCX requirement documents.
+- Accept multiple PDF, DOCX, and image requirement documents; OCR is available for scanned content when Tesseract is configured.
+- Keep requirement, test-case, and traceability repositories separate by selected project workspace.
 - Extract readable document text and divide it into overlapping chunks.
 - Identify candidate requirements using deterministic wording and heading rules.
 - Compare extracted requirements with the stored requirement repository.
@@ -39,9 +40,11 @@ The current application can:
 - Parse generated Markdown tables into test case records.
 - Assign test case IDs and compare generated cases with the existing repository.
 - Summarize KEEP, MODIFY, ADD, RETIRE, and REVIEW decisions.
+- Require user confirmation before proposed test-case retirement is applied.
 - Maintain versions and status for repository records.
 - Map requirements to test cases and calculate coverage.
 - Analyze suite quality, including gaps and near-duplicate candidates.
+- Optionally request advisory ambiguity findings with quotes checked against the cited requirement's source context.
 - Display the master suite and analysis in Streamlit.
 - Export the current suite as an Excel workbook.
 
@@ -67,9 +70,9 @@ The main stages are shown to the user as generation progresses. If no documents 
 
 ## 5. Document ingestion
 
-The upload interface accepts PDF and DOCX files. The application extracts text, combines readable content, and splits it into contextual segments before sending those segments for test generation. The current chunk configuration uses 7,000 characters with 600 characters of overlap.
+The upload interface accepts PDF, DOCX, and image files. Multiple files can be processed in one run. The application extracts text, combines readable content, and splits it into contextual segments before sending those segments for test generation. The current chunk configuration uses 7,000 characters with 600 characters of overlap. Upload and OCR limits can be adjusted through environment settings.
 
-The overlap is intended to retain some context across chunk boundaries. It does not guarantee that every table, cross-reference, or multi-page rule will be interpreted correctly. The current package uses text parsers for PDF and DOCX; no OCR step is visible in the workflow, so a scanned image-only PDF may not yield readable text.
+The overlap is intended to retain some context across chunk boundaries. It does not guarantee that every table, cross-reference, or multi-page rule will be interpreted correctly. PDF text extraction uses PyMuPDF/PyPDF2 and DOCX uses python-docx. Image and scanned-PDF OCR depends on the separately installed Tesseract executable and configured OCR language. OCR output and complex document layouts still need human review.
 
 ## 6. Requirement extraction
 
@@ -257,13 +260,16 @@ RARE is a proof of concept, not an autonomous test-authoring platform. Current l
 
 - Requirement identification and classification rely on deterministic keyword rules.
 - Priority is inferred from wording rather than confirmed business impact.
-- PDF and DOCX text parsing may lose structure; no OCR step is present in the current workflow.
+- PDF, DOCX, image, and OCR extraction may lose layout or table structure. OCR requires Tesseract to be installed separately.
+- Large-file and high-volume processing performance has not been established; configure upload limits for the deployment environment.
 - Chunking can separate related rules or context.
 - LLM output may be incomplete, inconsistent, or unsupported by the source.
 - Markdown parsing depends on the expected table format.
 - Automatic traceability uses text overlap and module matching, so mappings need review.
 - Repository data is stored in local JSON files without production multi-user controls.
 - Generated test cases are documentation; the app does not execute them against a product.
+- RAG/vector retrieval, Google Drive integration, Jira synchronization, reference execution, and mutation testing are not implemented.
+- In a recent user-run example, the generated suite was stored successfully but reported 45.45% requirement coverage. Coverage is a link metric, not proof of test correctness.
 - The app sends document chunks to a configured external LLM provider.
 
 ## 22. What I would improve next
@@ -272,9 +278,10 @@ If I took RARE further, I would consider:
 
 - More robust requirement extraction that preserves tables and source references.
 - A review screen for confirming requirement candidates before synchronization.
-- Human approval of requirement and test case changes before applying versions.
+- Broader human review for requirement and test-case decisions; test-case retirement already requires explicit confirmation.
 - Stronger traceability using explicit requirement references and reviewable match explanations.
 - Improved handling of partial generations and chunk-to-document citations.
+- Project/version-scoped RAG, runnable automation for configured targets, and execution/mutation evaluation where a trusted reference exists.
 - Evaluation datasets for groundedness, omission, duplication, and unsupported expectations.
 - A database with access control and audit history instead of local JSON storage.
 - A provider configuration indicator that matches the active LLM selection.
@@ -293,7 +300,7 @@ My focus was not only to generate test cases, but also to explore how a QA team 
 | Area | Technology |
 |---|---|
 | User interface | Streamlit |
-| Document parsing | PyPDF2 and python-docx |
+| Document parsing | PyMuPDF, PyPDF2, python-docx, Pillow, and optional Tesseract OCR |
 | LLM integration | OpenAI-compatible client configuration for Groq and Gemini |
 | Data validation and models | Python dataclasses and Pydantic in the project dependencies |
 | Local repositories | JSON files |
@@ -304,10 +311,10 @@ The source package includes Groq and Gemini settings. The current UI label says 
 
 ## 25. Project status
 
-The current package contains a Streamlit workflow and local repositories for demonstrating document analysis, generation, change handling, traceability, and quality review. It should be treated as a proof of concept. Generated cases, extracted requirements, and automatic mappings need human review before they are used as a team’s authoritative test assets.
+The public package now includes the working application source, backend tests, and technical documentation. A full run from the assembled portfolio copy passed 109 tests, with 48 pytest warnings (including collection and dependency deprecation warnings). This is a proof of concept, not a production release. Generated cases, extracted requirements, and automatic mappings need human review before they are used as a team's authoritative test assets.
 
 ## 26. Data handling and disclaimer
 
 The application reads uploaded requirement documents and sends document chunks to the configured language-model service for test generation. Use only documents approved for that provider and demo environment. Do not publish API keys, environment files, repository data, or real customer requirements in the portfolio.
 
-This is an independent learning and portfolio project. It is not a production test management platform and does not guarantee complete or correct requirements coverage. The public repository contains project documentation and selected reviewed evidence; it does not contain the full working application source or local data repositories.
+This is an independent learning and portfolio project. It is not a production test management platform and does not guarantee complete or correct requirements coverage. The public source excludes API credentials, `.env`, local JSON repositories, and uploaded requirement documents. Do not upload confidential requirements or real customer data.

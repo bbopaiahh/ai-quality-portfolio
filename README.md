@@ -93,7 +93,7 @@ RARE stands for Requirement Analysis and Response Engine.
 
 I built this as an experiment to see how an LLM could help with understanding software requirements.
 
-The application allows a user to provide requirement documents and then uses AI to analyse the content and respond to questions.
+The application reads requirement documents and supports QA review by extracting candidate requirements, proposing test cases, and reporting suite coverage and quality gaps.
 
 The project includes:
 
@@ -101,8 +101,9 @@ The project includes:
 - PDF and DOCX processing
 - Text chunking
 - LLM-based analysis
-- Retrieval-based understanding
-- AI-generated responses
+- AI-generated test cases
+- Requirement-to-test traceability and coverage analysis
+- Optional source-evidence ambiguity review
 - A simple Streamlit interface
 
 [View RARE Project →](./ai-assistants/02-rare-requirement-assistant/README.md)

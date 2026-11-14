@@ -686,3 +686,7 @@ This is an independent proof-of-concept project created for learning, experiment
 It is not an official production system for any bank, financial institution, company or Accounts Receivable department.
 
 The invoice data used for demonstration and testing is sample/test data.
+
+## Hosted agent
+
+Open the [NovaFin Zapier Agent copy link](https://agents.zapier.com/copy/4a0615e2-6284-48d2-a430-084aa58c6452). Zapier may require sign-in and may prompt the user to create a copy in their own account.

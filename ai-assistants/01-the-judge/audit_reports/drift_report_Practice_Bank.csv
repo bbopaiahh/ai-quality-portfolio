@@ -1,0 +1,7 @@
+Tenant,Timestamp,Field_ID,Check_Type,Property,Expected,Actual,Status,Notes
+Practice_Bank,19:39:34,validationCustom01,attribute,required,True,True,PASS,Matched
+Practice_Bank,19:39:34,validationCustom05,attribute,required,True,True,WARNING,ID Collision: 2 elements share this ID.
+Practice_Bank,19:39:34,validationCustom04,visibility,,True,True,PASS,Matched
+Practice_Bank,19:39:34,validationCustom04,disabled,,False,False,PASS,Matched
+Practice_Bank,19:39:34,validationCustom04,disabled,,True,False,FAIL,"Logic Drift: Expected True, Found False"
+Practice_Bank,19:39:34,validationCustom02,attribute,required,True,NOT_FOUND,FAIL,Element not found in DOM.
